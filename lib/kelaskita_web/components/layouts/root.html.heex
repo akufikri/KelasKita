@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="csrf-token" content={get_csrf_token()} />
+  <.live_title>
+    <%= assigns[:page_title] || "Kelaskita" %>
+  </.live_title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+  <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+  </script>
+</head>
+
+<body class="bg-white antialiased">
+  <SidebarComponent.sidebar />
+  <Navbar.navbar />
+  <div class="p-4 sm:ml-72">
+    <div class="p-4 border-dashed  mt-10">
+      <%= @inner_content %>
+    </div>
+  </div>
+</body>
+
+</html>
